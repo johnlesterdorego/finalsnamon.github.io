@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CoralView - Interactive Marine Conservation Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🌊CV</div>
+        <div>
+            <h1>CoralView</h1>
+            <p class="lead">Interactive Marine Conservation Guide</p>
+        </div>
+    </header>
+
+    <main class="layout">
+        <section class="scene" id="scene" aria-label="Underwater interactive scene">
+            <div class="item" id="coral" style="width:220px;height:160px;left:50px;bottom:180px;" title="Coral Reefs">
+                <img src="./image/corals.jpg" alt="A colorful coral reef formation." data-img-url="./image/corals.jpg">
+                <button class="zoom-in-trigger" data-img-src="./image/corals.jpg">🔍</button>
+            </div>
+
+            <div class="item" id="turtle" style="width:150px;height:150px;left:500px;top:50px;" title="Sea Turtle">
+                <img src="./image/seaturtle.jpg" alt="An adult sea turtle swimming." data-img-url="./image/seaturtle.jpg">
+                <button class="zoom-in-trigger" data-img-src="./image/seaturtle.jpg">🔍</button>
+            </div>
+
+            <div class="item" id="fish" style="width:250px;height:120px;left:100px;top:40px;" title="Fish Shoal">
+                <img src="./image/fishshoal.jpg" alt="A large school of small yellow fish." data-img-url="./image/fishshoal.jpg">
+                <button class="zoom-in-trigger" data-img-src="./image/fishshoal.jpg">🔍</button>
+            </div>
+
+            <div class="item" id="pollution" style="width:150px;height:140px;left:350px;bottom:160px;" title="Marine Pollution">
+                <img src="./image/marinewaste.jpg" alt="Plastic bottles and trash floating in the ocean." data-img-url="./image/marinewaste.jpg">
+                <button class="zoom-in-trigger" data-img-src="./image/marinewaste.jpg">🔍</button>
+            </div>
+
+            <div class="item" id="jellyfish" style="width:100px;height:120px;right:50px;bottom:400px;" title="Jellyfish">
+                <img src="./image/jellyfish.jpg" alt="A translucent jellyfish floating." data-img-url="./image/jellyfish.jpg">
+                <button class="zoom-in-trigger" data-img-src="./image/jellyfish.jpg">🔍</button>
+            </div>
+
+            <div class="item" id="mangrove" style="width:250px;height:150px;left:600px;bottom:170px;" title="Mangrove Forest">
+                <img src="./image/mangrove.jpg" alt="Mangrove roots extending into the water." data-img-url="./image/mangrove.jpg">
+                <button class="zoom-in-trigger" data-img-src="./image/mangrove.jpg">🔍</button>
+            </div>
+
+            <div class="sea-floor"></div>
+
+            <aside class="popup" id="popup" role="dialog" aria-hidden="true">
+                <button class="close" id="closePopup" aria-label="Close">×</button>
+                <div class="popup-header">
+                    <img id="popupIcon" src="" alt="Icon for element" />
+                    <h3 id="popupTitle">Title</h3>
+                </div>
+                <p id="popupBody">Information about the selected element will appear here.</p>
+                <div class="tags" id="popupTags"></div>
+                <div style="margin-top:12px;display:flex;gap:10px;justify-content:flex-end">
+                    <button id="saveFav" class="save-btn" style="padding:10px 15px;border-radius:8px;border:0;cursor:pointer">💾 Save as Note</button>
+                    <button id="challengeBtn" style="padding:10px 15px;border-radius:8px;border:0;cursor:pointer;background:#ffb703;color:#fff;font-weight:600;">💡 Learn More</button>
+                </div>
+            </aside>
+
+        </section>
+
+        <aside class="card">
+            <h2>Explore & Interact</h2>
+            <div class="controls">
+                <label for="topicFilter">Jump to Elements</label>
+                <select id="topicFilter">
+                    <option value=""> choose</option>
+                </select>
+
+                <label for="searchFav">Search saved notes</label>
+                <input type="search" id="searchFav" placeholder="e.g. 'turtle' or 'corals'">
+            </div>
+
+            <div class="favorites">
+                <h3>Saved Notes</h3>
+                <div class="fav-list" id="favList">
+                    </div>
+            </div>
+
+            <div class="sdg-info">
+                Life Below Water: Learn about threats to marine ecosystems and actions you can take to achieve Sustainable Development Goal 14.
+            </div>
+        </aside>
+
+    </main>
+    
+    <div id="zoomedImageContainer">
+        <button class="zoom-close-btn" id="closeZoom">×</button>
+        <img id="zoomedImage" src="" alt="Zoomed image view" />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
