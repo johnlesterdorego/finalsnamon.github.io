@@ -82,7 +82,7 @@
 
         .scene{
     
-    background: url('./seafloor.jpg') no-repeat center center/cover;
+    background: url('/seafloor.jpg') no-repeat center center/cover;
     
     border-radius:14px;
     padding:20px;
@@ -130,4 +130,5 @@
         .sdg-info strong{color:#0b3d91;}
 
         @media (max-width:950px){.layout{grid-template-columns:1fr}aside{order:2} .popup{right:18px;left:18px;bottom:18px;width:auto;}}
+
 
